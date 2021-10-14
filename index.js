@@ -210,6 +210,7 @@ for (album of favAlbums) {
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
         <div class="card border">
             <img src="${album.img}" class="card-img-top" alt="...">
+            <div class="music-badge">Music</div>
             <div class="card-body bg-dark">
                 <h5 class="card-title">${album.album}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${album.artist}</h6>
@@ -477,12 +478,10 @@ const tbody = document.querySelector('tbody')
 for (let i = 0; i < jonasBlueSongs.length; i++) {
     const newSong = document.createElement('tr')
     newSong.innerHTML = `
-    <tr>
         <th scope="row">${i + 1}</th>
         <td>${jonasBlueSongs[i].name}</td>
         <td>${jonasBlueSongs[i].duration}</td>
-        <td class="bi bi-trash appear-on-hover"></td>
-    </tr>`
+        <td class="bi bi-trash appear-on-hover"></td>`
     tbody.appendChild(newSong)
 }
 
@@ -494,3 +493,20 @@ const deleteSongFromTable = (e) => {
 const deleteSongBtn = document.querySelectorAll('.bi-trash')
 deleteSongBtn.forEach(btn => {
     btn.addEventListener('click', deleteSongFromTable)})
+
+
+const userAddedSong = () => {
+    const userSongNumber = document.querySelector('#user-song-number')
+    const userSongTitle= document.querySelector('#user-song-title')
+    const userSongDuration = document.querySelector('#user-song-duration')
+    const newUserSong = document.createElement('tr')
+    newUserSong.innerHTML = `
+    <th scope="row">${userSongNumber.value}</th>
+    <td>${userSongTitle}</td>
+    <td>${userSongDuration}</td>
+    <td class="bi bi-trash appear-on-hover"></td>`
+    tbody.appendChild(newUserSong)
+}
+
+//const userAddedSongBtn = document.querySelector('#userAddedSongBtn')
+//userAddedSongBtn.addEventListener('click', addUserSong)
