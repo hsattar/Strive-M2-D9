@@ -18,7 +18,7 @@ let favAlbums = [
             {
                 name: 'Blank Space',
                 duration: '3:52'
-            }
+            },
         ]
     },
     {
@@ -84,6 +84,54 @@ let favAlbums = [
             {
                 name: 'By Your Side',
                 duration: '4:34'
+            },
+            {
+                name: 'Drink To You',
+                duration: '3:30'
+            },
+            {
+                name: 'I See Love',
+                duration: '2:53'
+            },
+            {
+                name: 'Polaroid',
+                duration: '3:13'
+            },
+            {
+                name: 'Desperate',
+                duration: '2:54'
+            },
+            {
+                name: 'Wild',
+                duration: '3:32'
+            },
+            {
+                name: 'Wherever You Go',
+                duration: '3:28'
+            },
+            {
+                name: 'Purpose',
+                duration: '2:50'
+            },
+            {
+                name: 'Rise',
+                duration: '3:04'
+            },
+            {
+                name: 'Supernova',
+                duration: '3:07'
+            },
+            {
+                name: 'We COuld Go Back',
+                duration: '3:12'
+            },
+            {
+                name: 'Come Through',
+                duration: '2:58'
+            },
+            {
+                name: 'Fast Car',
+                duration: '3:04'
             }
         ]
     },
@@ -353,4 +401,86 @@ for (let coverSrc of albumGallery) {
     albumCover.className = 'col-4 col-sm-3 col-lg-2'
     albumCover.innerHTML = `<img src="${coverSrc}">`
     albumGallerySection.appendChild(albumCover)
+}
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const jonasBlueSongs = [
+    {
+        name: 'Mama',
+        duration: '3:04'
+    },
+    {
+        name: 'Perfect Strangers',
+        duration: '3:16'
+    },
+    {
+        name: 'By Your Side',
+        duration: '4:34'
+    },
+    {
+        name: 'Drink To You',
+        duration: '3:30'
+    },
+    {
+        name: 'I See Love',
+        duration: '2:53'
+    },
+    {
+        name: 'Polaroid',
+        duration: '3:13'
+    },
+    {
+        name: 'Desperate',
+        duration: '2:54'
+    },
+    {
+        name: 'Wild',
+        duration: '3:32'
+    },
+    {
+        name: 'Wherever You Go',
+        duration: '3:28'
+    },
+    {
+        name: 'Purpose',
+        duration: '2:50'
+    },
+    {
+        name: 'Rise',
+        duration: '3:04'
+    },
+    {
+        name: 'Supernova',
+        duration: '3:07'
+    },
+    {
+        name: 'We COuld Go Back',
+        duration: '3:12'
+    },
+    {
+        name: 'Come Through',
+        duration: '2:58'
+    },
+    {
+        name: 'Fast Car',
+        duration: '3:04'
+    }
+]
+
+const tbody = document.querySelector('tbody')
+for (let i = 0; i < jonasBlueSongs.length; i++) {
+    const newSong = document.createElement('tr')
+    newSong.innerHTML = `
+    <tr>
+        <th scope="row">${i + 1}</th>
+        <td>${jonasBlueSongs[i].name}</td>
+        <td>${jonasBlueSongs[i].duration}</td>
+        </tr>`
+        tbody.appendChild(newSong)
 }
