@@ -210,7 +210,7 @@ for (album of favAlbums) {
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
         <div class="card border">
             <img src="${album.img}" class="card-img-top" alt="...">
-            <div class="music-badge">Music</div>
+            <div class="music-badge"><i class="bi bi-music-note-beamed mr-1"></i>Music</div>
             <div class="card-body bg-dark">
                 <h5 class="card-title">${album.album}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${album.artist}</h6>
