@@ -481,6 +481,16 @@ for (let i = 0; i < jonasBlueSongs.length; i++) {
         <th scope="row">${i + 1}</th>
         <td>${jonasBlueSongs[i].name}</td>
         <td>${jonasBlueSongs[i].duration}</td>
-        </tr>`
-        tbody.appendChild(newSong)
+        <td class="bi bi-trash appear-on-hover"></td>
+    </tr>`
+    tbody.appendChild(newSong)
 }
+
+const deleteSongFromTable = (e) => {
+    const selectedSongRow = e.target.parentNode
+    selectedSongRow.remove()
+}
+
+const deleteSongBtn = document.querySelectorAll('.bi-trash')
+deleteSongBtn.forEach(btn => {
+    btn.addEventListener('click', deleteSongFromTable)})

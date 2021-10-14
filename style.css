@@ -35,3 +35,11 @@ tr:nth-child(2n) {
   background-color: rgb(180, 174, 174);
   color: black;
 }
+
+tr:hover .appear-on-hover {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+.appear-on-hover {
+  opacity: 0;
+}
