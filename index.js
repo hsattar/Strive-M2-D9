@@ -500,18 +500,15 @@ const checkUserSongInput = () => {
     const userSongNumber = document.querySelector('#user-song-number')
     const userSongTitle= document.querySelector('#user-song-title')
     const userSongDuration = document.querySelector('#user-song-duration')
-    console.log(userSongNumber.value)
-    console.log(userSongTitle.value)
-    console.log(userSongDuration.value)
-    if (userSongNumber.value && userSongTitle.value && userSongDuration.value) {
+    if (userSongNumber.value !== '' && userSongTitle.value !== '' && userSongDuration.value !== '') {
         addUserSong(userSongNumber, userSongTitle, userSongDuration)
         const userAddedSongBtn = document.querySelector('#userAddedSongBtn')
         userAddedSongBtn.setAttribute('data-dismiss', 'modal')
     }
     else {
-        userSongNumber.className = 'form-control bg-danger text-white'
-        userSongTitle.className = 'form-control bg-danger text-white'
-        userSongDuration.className = 'form-control bg-danger text-white'
+        const inputAlertError = document.querySelector('#input-error-alert')
+        inputAlertError.classList.remove('d-none')
+        inputAlertError.classList.add('d-block')
     }
 }
 
@@ -524,6 +521,12 @@ const addUserSong = (userSongNumber, userSongTitle, userSongDuration) => {
     <td>${userSongDuration.value}</td>
     <td class="bi bi-trash appear-on-hover"></td>`
     tbody.appendChild(newUserSong)
+    userSongNumber.value = ''
+    userSongTitle.value = ''
+    userSongDuration.value = ''
+    const inputAlertError = document.querySelector('#input-error-alert')
+    inputAlertError.classList.add('d-none')
+    inputAlertError.classList.remove('d-block')
     deleteSongFromTable()
 }
 
